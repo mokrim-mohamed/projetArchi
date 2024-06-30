@@ -7,7 +7,6 @@ pipeline {
                 git branch: 'developper', url: 'https://github.com/mokrim-mohamed/projectTest'
             }
         }
-         stages {
         stage('Build and Run Docker Image') {
             steps {
                 script {
@@ -22,5 +21,5 @@ pipeline {
     }
 
         // Ajouter d'autres étapes de build, test, et déploiement ici
-    }
+    
 }
