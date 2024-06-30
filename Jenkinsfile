@@ -43,7 +43,7 @@ pipeline {
             echo 'Réussite - Envoyer une notification par email, par exemple'
         }
         failure {
-            echo 'Échec - Alerter l'équipe de développement, par exemple'
+            echo "Échec - Alerter l'équipe de développement, par exemple"
         }
     }
 }
