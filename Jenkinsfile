@@ -24,7 +24,7 @@ pipeline {
 
         stage('Deploy to Recette') {
             when {
-                branch 'develop'
+                branch 'developpe'
             }
             steps {
                 echo "Déploiement vers l'environnement de Recette"
