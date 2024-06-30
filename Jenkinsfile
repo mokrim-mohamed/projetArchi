@@ -22,16 +22,7 @@ pipeline {
             }
         }
 
-        stage('Deploy to Recette') {
-            when {
-                branch 'developpe'
-            }
-            steps {
-                echo "Déploiement vers l'environnement de Recette"
-                // Ajouter ici les commandes pour déployer vers l'environnement de recette
-                // Par exemple, utilise kubectl pour appliquer les manifestes Kubernetes
-            }
-        }
+        
     }
 
     post {
