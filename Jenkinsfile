@@ -18,7 +18,7 @@ pipeline {
             steps {
                 // Construction de l'image Docker
                 script {
-                    docker.build('votre-image:latest')
+                    sh "${DOCKER_BIN} build -t votre-image:latest ."
                 }
             }
         }
