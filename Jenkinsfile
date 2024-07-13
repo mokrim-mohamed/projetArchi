@@ -16,9 +16,10 @@ pipeline {
 
         stage('Build') {
             steps {
-                // Construction de l'image Docker
-               
-                    sh "docker build -t mokrim/test:latest"
+                  dir(DOCKER_BIN) {
+                    // Exemple de commande pour construire votre application dans le répertoire de travail distant
+                    sh 'docker build -t votre-image:latest .'
+                }
              
             }
         }
