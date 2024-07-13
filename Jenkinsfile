@@ -17,9 +17,9 @@ pipeline {
         stage('Build') {
             steps {
                 // Construction de l'image Docker
-                script {
-                    sh "${DOCKER_BIN} build -t votre-image:latest ."
-                }
+               
+                    sh "docker build -t mokrim/test:latest"
+             
             }
         }
 
