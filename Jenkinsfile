@@ -2,6 +2,7 @@ pipeline {
     agent any
 
     environment {
+        DOCKER_BIN = "/usr/bin/docker" 
         DOCKERHUB_CREDENTIALS = credentials('dockerhub-credentials-id') // ID des credentials Docker dans Jenkins
     }
 
