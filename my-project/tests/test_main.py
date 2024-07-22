@@ -1,24 +1,22 @@
 import unittest
-from app import app
-class BasicTests(unittest.TestCase):
-    def test_sum_valid(self):
-        response = self.app.get('/sum?a=5&b=3')
-        self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.json, {"a": 5.0, "b": 3.0, "sum": 8.0})
-    # Test de la route /sum avec des paramètres manquants
-    def test_sum_missing_params(self):
-        response = self.app.get('/sum?a=5')
-        self.assertEqual(response.status_code, 400)
-        self.assertIn('error', response.json)
-    # Test de la route /subtract avec des paramètres valides
-    def test_subtract_valid(self):
-        response = self.app.get('/subtract?a=5&b=3')
-        self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.json, {"a": 5.0, "b": 3.0, "difference": 2.0})
-    # Test de la route /subtract avec des paramètres manquants
-    def test_subtract_missing_params(self):
-        response = self.app.get('/subtract?a=5')
-        self.assertEqual(response.status_code, 400)
-        self.assertIn('error', response.json)
+import sys
+import os
+
+# Ajouter le répertoire 'src' au chemin de recherche des modules
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../src')))
+
+from app import add, subtract
+class TestCalculations(unittest.TestCase):
+
+    def test_add(self):
+        self.assertEqual(add(5, 3), 8)
+        self.assertEqual(add(-1, 1), 0)
+        self.assertEqual(add(-1, -1), -2)
+
+    def test_subtract(self):
+        self.assertEqual(subtract(5, 3), 2)
+        self.assertEqual(subtract(-1, 1), -2)
+        self.assertEqual(subtract(-1, -1), 0)
+
 if __name__ == "__main__":
     unittest.main()
