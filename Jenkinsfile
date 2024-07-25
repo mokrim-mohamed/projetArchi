@@ -12,7 +12,7 @@ pipeline {
         stage('Echo Message') {
             steps {
                 // Exemple de commande pour afficher un message
-                sh 'echo "Le code a été récupéré avec succès et le pipeline est en cours d\'exécution."'
+                echo 'echo "Le code a été récupéré avec succès et le pipeline est en cours d\'exécution."'
             }
         }
     }
