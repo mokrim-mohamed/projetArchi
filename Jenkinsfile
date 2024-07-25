@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Récupérer le code source depuis le repository
-                git url: 'https://github.com/votre-repository/mon-projet.git'
+                git url: 'https://github.com/mokrim-mohamed/projetArchi'
             }
         }
 
