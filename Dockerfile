@@ -14,8 +14,7 @@ COPY requirements.txt .
 COPY ./my-project/src .
 
 # Installer les dépendances Python
-RUN pip install --no-cache-dir -r requirements.txt
-RUN chmod +x run_tests.sh
+
 # Copier tous les fichiers du projet dans le conteneur
 
 
