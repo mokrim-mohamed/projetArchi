@@ -12,8 +12,7 @@ WORKDIR /app
 # Copier le fichier requirements.txt dans le conteneur
 COPY ./my-project/requirements.txt .
 COPY ./my-project/src .
-COPY ./my-project/tests ./tests
-COPY ./my-project/run_tests.sh .
+
 # Installer les dépendances Python
 RUN pip install --no-cache-dir -r requirements.txt
 RUN chmod +x run_tests.sh
