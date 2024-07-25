@@ -5,29 +5,14 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Récupérer le code source depuis le repository
-                git url: 'https://github.com/mokrim-mohamed/projetArchi'
+                git url: 'https://github.com/votre-repository/mon-projet.git'
             }
         }
 
-        stage('Build') {
+        stage('Echo Message') {
             steps {
-                // Exemple de commande de construction
-                  // Remplacez par votre commande de construction
-            }
-        }
-
-        stage('Test') {
-            steps {
-                // Exemple de commande pour exécuter les tests
-             // Remplacez par votre commande de tests
-            }
-        }
-
-        stage('Deploy') {
-            steps {
-                // Exemple de commande pour déployer l'application
-                // Ajoutez ici les commandes spécifiques à votre déploiement
-                echo 'Déploiement en cours...'  // Remplacez par votre commande de déploiement
+                // Exemple de commande pour afficher un message
+                sh 'echo "Le code a été récupéré avec succès et le pipeline est en cours d\'exécution."'
             }
         }
     }
