@@ -12,11 +12,14 @@ pipeline {
                 git url: 'https://github.com/mokrim-mohamed/projetArchi', branch: 'main'
             }
         }
-        stage('Build Docker Image') {
+        stage('Check Docker') {
             steps {
                 script {
-                    // Construire l'image Docker
-                    docker.build("${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG}")
+                    // Vérifier que Docker est accessible et obtenir la version
+                    sh 'docker --version'
+                    
+                    // Optionnel : Exécuter un conteneur Docker basique pour vérifier que Docker fonctionne correctement
+                    sh 'docker run --rm hello-world'
                 }
             }
         }
