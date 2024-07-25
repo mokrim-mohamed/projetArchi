@@ -10,7 +10,7 @@ USER jenkins
 # Définir le répertoire de travail dans le conteneur
 WORKDIR /app
 # Copier le fichier requirements.txt dans le conteneur
-COPY ./my-project/requirements.txt .
+COPY requirements.txt .
 COPY ./my-project/src .
 
 # Installer les dépendances Python
