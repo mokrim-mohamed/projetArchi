@@ -22,4 +22,3 @@ RUN chmod +x run_tests.sh
 # Exposer le port sur lequel l'application Flask s'exécute
 
 # Commande par défaut pour exécuter l'application
-CMD ["./run_tests_and_start.sh"]
