@@ -43,7 +43,16 @@ pipeline {
             }
         }
 
-       
+       stage('Push') {
+            steps {
+                script {
+                    // Se connecter à Docker Hub et pousser l'image
+                    docker.withRegistry('https://index.docker.io/v1/', DOCKER_CREDENTIALS_ID) {
+                        sh "docker push ${IMAGE_NAME}:${IMAGE_TAG}"
+                    }
+                }
+            }
+        }
     }
 
     post {
