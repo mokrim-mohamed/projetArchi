@@ -37,6 +37,8 @@ pipeline {
                 script {
                     // Construire l'image Docker
                     def image = docker.build("${IMAGE_NAME}:${IMAGE_TAG}")
+                    echo 'image a ete cree'
+
                 }
             }
         }
