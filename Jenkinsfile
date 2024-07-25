@@ -36,24 +36,14 @@ pipeline {
             steps {
                 script {
                     // Construire l'image Docker
-                    def image = docker.build("${IMAGE_NAME}:${IMAGE_TAG}")
+                    sh 'docker build -t test/test:latest .'
                     echo 'image a ete cree'
 
                 }
             }
         }
 
-        stage('Push Docker Image') {
-            steps {
-                script {
-                    // Se connecter au registre Docker
-                    docker.withRegistry("https://${REGISTRY}", 'docker-credentials-id') {
-                        // Pousser l'image Docker vers le registre
-                        docker.image("${IMAGE_NAME}:${IMAGE_TAG}").push("${IMAGE_TAG}")
-                    }
-                }
-            }
-        }
+       
     }
 
     post {
